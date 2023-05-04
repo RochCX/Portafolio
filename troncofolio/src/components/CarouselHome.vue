@@ -54,7 +54,7 @@
     position: relative;
     z-index: 0;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 25px;
     transition: 0.5s;
     
 }
@@ -62,7 +62,7 @@
     z-index: 1;
     position: relative;
     max-width: 40vw;
-    min-width: 390px;
+    min-width: 150px;
     left: -6vw;
     top: -2vh;
     transition: 0.5s;
@@ -71,12 +71,12 @@
     text-align: end;
     margin-bottom: 200px;
 }
-@media (max-width:900px){
+@media (max-width:768px){
     .carousel-item.active .bloqueFondo img{
     z-index: 1;
     position: relative;
     max-width: 40vw;
-    min-width: 390px;
+    min-width: 250px;
     left: -6vw;
     top: -2vh;
     transition: 1s;
@@ -84,6 +84,10 @@
 }
 .bloqueFondo{
     height: 75vh;
+}
+.carousel-caption{
+    text-align: center;
+    margin-bottom: 0%;
 }
 }
 </style>
