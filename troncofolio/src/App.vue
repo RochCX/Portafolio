@@ -5,11 +5,19 @@
 
 <script>
 import NavBar from "./components/NavBar.vue"
+import { mapActions } from "vuex";
 
 export default{
+  
   components: {
     NavBar,
   },
+  computed:{
+    ...mapActions(['feedInsta']),
+  },
+  async created(){
+    await this.feedInsta
+  }
 }
 </script>
 
