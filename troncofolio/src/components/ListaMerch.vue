@@ -16,5 +16,6 @@
 </template>
 
 <script>
+// https://rapidapi.com/iddogino1/api/my-store2 <-- creo que nos sirve para hacer nuestra propia api de productos :O
 
 </script>
