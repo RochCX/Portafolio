@@ -74,5 +74,12 @@ export default{
 }
 .navBtn:hover{
     cursor: pointer;
+    color: green;
+    transition: 0.3s;
+}
+.nav-item:hover{
+    transform: scale(1.2);
+    transition: 0.3s ease-in-out;
+    animation-timing-function: ease-in-out;
 }
 </style>
