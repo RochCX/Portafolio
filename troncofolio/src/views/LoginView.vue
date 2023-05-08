@@ -5,7 +5,7 @@
                 <div id="contenedor">
                 <h1 style="font-weight: 800;">Iniciar Sesión</h1>                    
                     <input v-model.trim="formulario.correo" placeholder="Correo" type="email" name="correo_txt" id="email" class="cambio" required>
-                    <input v-model.trim="formulario.password" placeholder="Asunto" type="text" name="asunto_txt" id="asunto" class="cambio" required>
+                    <input v-model.trim="formulario.password" placeholder="Asunto" type="password" name="asunto_txt" id="asunto" class="cambio" required>
                     <div class="seccionboton">
                     <button type="button" value="Enviar" id="enviar" class="btn_contact" name="enviar" @click.prevent="conectar()">ENVIAR</button>
                 </div>

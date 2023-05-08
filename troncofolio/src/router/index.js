@@ -59,6 +59,7 @@ router.beforeEach((to,from,next) =>{
     if(user){
       state.conexion = true;
       localStorage.setItem('localConectado',state.conexion);
+      state.correo = user.email;
       // puedo colocar el correo del usuario :O
       return
     } else{

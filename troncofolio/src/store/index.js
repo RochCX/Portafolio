@@ -8,6 +8,7 @@ export default createStore({
   state: {
     conexion: false,
     imagenes: null,
+    correo: "",
   },
   getters: {
   },
@@ -19,6 +20,7 @@ export default createStore({
       if (state.conexion == true) {
         signOut(auth).then(() => {
           state.conexion = false;
+          state.correo = "";
           router.push('/')
         }).catch((error) => {
           alert(error);

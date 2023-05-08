@@ -29,6 +29,9 @@
                 <a class="navBtn" data-bs-toggle="modal" data-bs-target="#loggoutModal"> Cerrar Sesion</a>
             </li>
         </ul>
+        <div class="correoMuestra">
+                <a id="showCorreo" class="ms-lg-auto">{{ correo }} </a>
+            </div>
         </div>
     </div>
     </nav>
@@ -58,7 +61,8 @@ import {mapState,mapMutations} from "vuex"
 
 export default{
     computed:{
-        ...mapState(['conexion'])
+        ...mapState(['conexion']),
+        ...mapState(['correo'])
     },
     methods: {
         ...mapMutations(['desconectar'])
@@ -71,15 +75,26 @@ export default{
 .navBtn{
     text-decoration: none;
     color: white;
+    transition: 0.7s;
+    transform: scale(1);
 }
 .navBtn:hover{
     cursor: pointer;
     color: green;
-    transition: 0.3s;
+    transition: 0.6s;
 }
 .nav-item:hover{
     transform: scale(1.2);
     transition: 0.3s ease-in-out;
     animation-timing-function: ease-in-out;
+}
+.correoMuestra{
+    display: flex;
+    align-items: flex-end;
+}
+#showCorreo{
+    text-decoration: none;
+    
+    
 }
 </style>
