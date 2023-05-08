@@ -1,21 +1,79 @@
 <template>
-    <!-- <div v-if="arrayCursos.length==0" id="carga">
-		<PulseLoader></PulseLoader>
-	</div> -->
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col"> <!--colocar un v-for para recorrer lista de productos-->
-        <div class="card">
-        <img src="../assets/ilustronco_sfondo.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <div class="row row-cols-md-2 g-4 mt-1">
+        <div class="col-lg-3" v-for="merch in listaP" :key="merch.id"> <!--colocar un v-for para recorrer lista de productos-->
+            <div class="card">
+            <img :src="merch.imagen" class="imgCard" data-bs-toggle="modal" :data-bs-target="'#'+merch.id" alt="...">
+            <!-- modal de imagen -->
+            <div class="modal fade " :id="merch.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img :src="merch.imagen" class="image-responsive" alt="">
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
-        </div>
-    </div>
     </div>
 </template>
 
-<script>
-// https://rapidapi.com/iddogino1/api/my-store2 <-- creo que nos sirve para hacer nuestra propia api de productos :O
+<style scoped>
+.card{
+    margin: auto;
+    width: 22vw;
+    height: 35vh;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.imgCard{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+    transition: 0.5s;
+}
+.imgCard:hover{
+    transform: scale(1.1);
+}
+@media (max-width: 990px){
+    .card{
+        width: 45vw;
+    }
+}
+@media (max-width: 768px){
+    .card{
+        width: 90vw;
+    }
+}
 
+</style>
+
+<script>
+import { ProductService } from '@/services/ProductService';
+
+export default{
+    data: function(){
+        return {
+            listaP:[],
+        }
+    },
+    created: async function(){
+        try{
+            let respuesta = await ProductService.getAllMerch();
+            this.listaP = respuesta;
+        } catch (error){
+            this.errormessage = error
+        }
+    }
+}
 </script>

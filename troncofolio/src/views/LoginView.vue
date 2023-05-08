@@ -5,28 +5,52 @@
                 <div id="contenedor">
                 <h1 style="font-weight: 800;">Iniciar Sesión</h1>                    
                     <input v-model.trim="formulario.correo" placeholder="Correo" type="email" name="correo_txt" id="email" class="cambio" required>
-                    <input v-model.trim="formulario.password" placeholder="Asunto" type="password" name="asunto_txt" id="asunto" class="cambio" required>
+                    <input v-model.trim="formulario.password" placeholder="Contraseña" type="password" name="asunto_txt" id="pass" class="cambio" required>
                     <div class="seccionboton">
                     <button type="button" value="Enviar" id="enviar" class="btn_contact" name="enviar" @click.prevent="conectar()">ENVIAR</button>
                 </div>
                 </div>
             </fieldset>
         </form>
-        <!-- quiero hacer un popup para hacer la nueva -->
+        <!-- Boton abre modal login -->
         <div class="caja__signup">
             <div class="contCaja">
                 <h1 class="titulo_signup">Hola! unete al clan tronco</h1>
                 <p>Has tu propia cuenta clickeando aqui abajo, es gratis!</p>
-                <button class="SignUp">Únete</button>
+                <button class="SignUp" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Únete</button>
             </div>
         </div>
     </div>
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Creación de cuenta</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label class="form-check-label" for="nuevoEmail"> Introduzca un correo</label>
+        <input v-model.trim="nuevoTronco.correoN" placeholder="Correo" type="email" name="correo_txt" id="nuevoEmail" class="cambio" required>
+        <label class="form-check-label" for="nuevoPass"> Ingrese una contraseña</label>
+        <input v-model.trim="nuevoTronco.passwordN" placeholder="Contraseña" type="password" name="asunto_txt" id="nuevoPass" class="cambio" required>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" @click.prevent="crearCuenta()" data-bs-dismiss="modal">Registrarse</button>
+      </div>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
 import router from '@/router';
 import { auth } from '@/firebase/index.js';
 import store from '@/store';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import Swal from 'sweetalert2'
 
 const estado = store.state
 
@@ -37,10 +61,37 @@ export default{
             formulario:{
                 correo:"",
                 password:""
+            },
+            nuevoTronco:{
+                correoN:"",
+                passwordN:""
             }
         };
     },
     methods: {
+        crearCuenta(){
+            const auth = getAuth();
+            createUserWithEmailAndPassword(auth, this.nuevoTronco.correoN, this.nuevoTronco.passwordN)
+                .then((userCredential) => {
+                console.log("Nuevo usuario registrado: " + userCredential.user.uid);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registro exitoso',
+                    text: 'El usuario ha sido registrado exitosamente. Bienvenido a TroncoWeb!',
+                });
+                router.push('/');
+                })
+                .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: errorMessage,
+                    footer: errorCode
+                })
+                });
+        },
         conectar(){
             auth
         .signInWithEmailAndPassword(
@@ -53,7 +104,11 @@ export default{
             }).catch((err) => {
             console.log(err);
             if (!estado.conexion){
-                alert('Usuario o contraseña incorrectos');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: err,
+                    });
             }
         })
         }
@@ -114,7 +169,7 @@ export default{
     padding-right: 10px;
     gap: 5px;
     text-align: center; }
-#contenedor input {
+.cambio {
     background-color: #eee;
     border: none;
     padding: 5px 15px;
