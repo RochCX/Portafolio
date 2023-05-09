@@ -1,16 +1,19 @@
 <template>
   <NavBar/>
   <router-view/>
+  <FooterBar/>
 </template>
 
 <script>
 import NavBar from "./components/NavBar.vue"
 import { mapActions } from "vuex";
+import FooterBar from "./components/FooterBar.vue"
 
 export default{
   
   components: {
     NavBar,
+    FooterBar,
   },
   computed:{
     ...mapActions(['feedInsta']),

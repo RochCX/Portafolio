@@ -49,6 +49,9 @@
     .card{
         width: 45vw;
     }
+    .image-responsive{
+        max-width: 85vw;
+    }
 }
 @media (max-width: 768px){
     .card{

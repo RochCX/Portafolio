@@ -1,7 +1,9 @@
 <template>
-        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg" style="z-index: 100;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Troncoweb</a>
+        <a class="navbar-brand" href="/">
+            <img src="../assets/pera_cara.png" style="height: 10vh;margin-right: 15px;" alt="">
+            Troncoweb</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -9,9 +11,6 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item me-3 mb-2 mb-lg-0">
                 <router-link class="navBtn" to="/">Home</router-link>
-            </li>
-            <li class="nav-item me-3 mb-2 mb-lg-0">
-                <router-link class="navBtn" to="/about">About</router-link>
             </li>
             <li class="nav-item me-3 mb-2 mb-lg-0">
                 <router-link class="navBtn" to="/merch">Merch</router-link> 
@@ -72,6 +71,12 @@ export default{
 </script>
 
 <style scoped>
+.navbar-nav{
+    font-size: large;
+}
+.navbar-brand{
+    font-size: xx-large;
+}
 .navBtn{
     text-decoration: none;
     color: white;
