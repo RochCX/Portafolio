@@ -1,7 +1,9 @@
 <template>
+
   <NavBar/>
   <router-view/>
   <FooterBar/>
+
 </template>
 
 <script>
@@ -26,7 +28,11 @@ export default{
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&display=swap');
-
+body{
+  background-image: url('@/assets/Inefable_Lata_FHD_VUE.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 #app {
   font-family: 'Josefin Sans', sans-serif;
   -webkit-font-smoothing: antialiased;

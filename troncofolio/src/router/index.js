@@ -5,7 +5,7 @@ import LoginView from '../views/LoginView.vue'
 import CommView from '../views/CommView.vue'
 import ArtView from '../views/ArtView.vue'
 
-
+import Swal from 'sweetalert2'
 
 import store from '@/store'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -66,7 +66,11 @@ router.beforeEach((to,from,next) =>{
   })
   // Si intento entrar a la vista Login estado ya conectado
   if(estadoC && to.path == '/login'){
-    alert('Que haces?! ya estas conectado soperutano!')
+    Swal.fire({
+      title: 'Qué haces?',
+      text: "Ya estás loggeado!",
+      icon: 'warning',
+    })
     next('/')
     return
   }
@@ -76,7 +80,14 @@ router.beforeEach((to,from,next) =>{
       next();
       return
     } else{
-      alert('Sale de aca intruso!')
+      Swal.fire({
+        title: 'Hey!',
+        text: 'No puedes realizar un pedido sin haberte conectado',
+        imageUrl: 'https://i.kym-cdn.com/photos/images/original/001/389/843/de0.jpeg',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Alerta',
+      })
       next('/');
       return
     }

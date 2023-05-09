@@ -20,9 +20,9 @@
             <label for="validationCustom03" class="form-label">Teléfono</label>
             <input v-model="inputTelefono" type="text" class="form-control" id="validationCustom03" required>
         </div>
-        <fieldset class="row mb-4 mt-4">
-            <legend class="col-form-label col-sm-2 pt-0">Escoja el tipo de dibujo</legend>
-            <div class="col-sm-2">
+        <fieldset class="dibujo row mb-4 mt-4">
+            <legend class="col-form-label col-sm-6 pt-0">Escoja el tipo de dibujo</legend>
+            <div class="col-sm-4">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" :value="true"
                         v-model="checkeo" checked>
@@ -57,13 +57,15 @@
         </div>
         <div class="form-floating">
             <textarea v-model="inputComentarios" class="form-control" placeholder="Instrucciones de dibujo" id="floatingTextarea" required></textarea>
-            <label for="floatingTextarea">Escriba lo que necesite</label>
+            <label style="font-size:small;" for="floatingTextarea">Escriba lo que necesite</label>
         </div>
         <div>
             <div class="row mb-4 justify-content-center">
-                <h5>Inserte link de referencia</h5>
-                <div class="col-md-2">
-                    <button class="btn btn-primary mb-1 btnform" @click.prevent="addUrl">Agregar URL</button>
+                <div class="row">
+                    <div class="col-md-6"><h5>Inserte link de referencia</h5></div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary mb-1 btnform" @click.prevent="addUrl">Agregar URL</button>
+                    </div>
                 </div>
                 <div class="row mb-1" v-for="(url, index) in urls" :key="index">
                     <div class="col-md-8">
@@ -205,12 +207,21 @@ export default {
 </script>
 
 <style scoped>
+.dibujo{
+    background-color: white;
+    border-radius: 15px;
+    margin: auto;
+    width: 70vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .commform {
+    font-size: large;
     margin: auto;
     margin-top: 15px;
     width: 95vw;
     height: 85vh;
-    background: linear-gradient(to right, #2bceff71, #41ff8073);
+    background: linear-gradient(to right, #2bceffa8, #41ff80b7);
     padding: 20px;
     overflow-y: scroll;
     border-radius: 15px;
@@ -232,5 +243,10 @@ export default {
     font-size: 15px;
     font-weight: bold;
     width: 150px;
+}
+@media(max-width: 768px){
+    .commform {
+    font-size: medium;
+    }
 }
 </style>

@@ -122,17 +122,18 @@ export default{
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
-    margin: 15px 10px 0px 10px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    max-width: 100%;
+    max-width: 95%;
+    margin: auto;
+    margin-top: 2vh;
     height: 85vh;
     background-color: whitesmoke;
     transition: 0.5s;
     /* background-color: #FF416C; */
- }
+}
 .seccionboton {
     display: flex;
     flex-direction: row;

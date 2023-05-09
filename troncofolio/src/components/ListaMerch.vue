@@ -25,7 +25,7 @@
 <style scoped>
 .card{
     margin: auto;
-    width: 22vw;
+    width: 21vw;
     height: 35vh;
     overflow: hidden;
     object-fit: cover;
