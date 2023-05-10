@@ -92,7 +92,7 @@
 .img3{
     z-index: 1;
     position: relative;
-    max-height: 850px;
+    max-height: 520px;
     max-width: 40vw;
     min-width: 150px;
     left: -4vw;

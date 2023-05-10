@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import { getAuth, signOut } from "firebase/auth"
 import router from '@/router'
+import Swal from 'sweetalert2'
 
 const auth = getAuth()
 
@@ -46,6 +47,11 @@ export default createStore({
         commit('crearGaleria', resultado.media)
       } catch (error) {
         console.error(error);
+        Swal.fire({
+          title: 'Error de API',
+          text: "Parece que se ha terminado el numero de request para la API",
+          icon: 'warning',
+        })
       }
     }
   },

@@ -4,6 +4,8 @@ import MerchView from '../views/MerchView.vue'
 import LoginView from '../views/LoginView.vue'
 import CommView from '../views/CommView.vue'
 import ArtView from '../views/ArtView.vue'
+import NotFound from '../views/NotFound.vue'
+import DetalleProducto from '../components/DetalleProducto.vue'
 
 import Swal from 'sweetalert2'
 
@@ -25,6 +27,11 @@ const routes = [
     component:MerchView,
   },
   {
+    path: '/merch/:id',
+    name: 'detalle-merch',
+    component: DetalleProducto
+  },
+  {
     path: '/login',
     name: 'login',
     component:LoginView,
@@ -39,6 +46,11 @@ const routes = [
     name: 'gallery',
     component: ArtView,
   },
+  { 
+    path: '/:pathMatch(.*)*',
+    name: 'not-found', 
+    component: NotFound
+   },
 ]
 
 const router = createRouter({

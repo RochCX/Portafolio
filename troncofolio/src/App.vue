@@ -1,8 +1,11 @@
 <template>
-
-  <NavBar/>
-  <router-view/>
+<div class="page-container">
+  <div class="wrapper">
+    <NavBar/>
+    <router-view/>
+  </div>
   <FooterBar/>
+</div>
 
 </template>
 
@@ -32,12 +35,27 @@ body{
   background-image: url('@/assets/Inefable_Lata_FHD_VUE.png');
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 #app {
   font-family: 'Josefin Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+.page-container{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.wrapper{
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 /*
 nav {
