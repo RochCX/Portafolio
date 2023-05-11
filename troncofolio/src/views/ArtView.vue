@@ -77,4 +77,10 @@ export default {
 
 .galleryImg:hover {
     transform: scale(1.07);
-}</style>
+}
+@media(max-width: 900px){
+.artContainer{
+    grid-template-columns: repeat(2,1fr);
+}
+}
+</style>
