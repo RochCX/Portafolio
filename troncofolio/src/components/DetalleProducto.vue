@@ -14,7 +14,7 @@
 <script>
 import router from '@/router';
 import { ProductService } from '@/services/ProductService';
-import Swal from 'sweetalert2';
+
 
 export default {
   data() {
@@ -37,12 +37,7 @@ export default {
       try {
         this.merch = await ProductService.getMerchById(id);
         if(this.merch === null) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Este producto no existe',
-            });
-            router.push('/')
+            router.push({name: "not-found"})
         }
       } catch (error) {
         console.log(error);

@@ -2,7 +2,11 @@
 <div class="page-container">
   <div class="wrapper">
     <NavBar/>
-    <router-view/>
+    <router-view v-slot="{ Component }">
+  <transition name="slide-fade">
+    <component :is="Component" />
+  </transition>
+</router-view>
   </div>
   <FooterBar/>
 </div>
@@ -30,6 +34,19 @@ export default{
 </script>
 
 <style>
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&display=swap');
 body{
   background-image: url('@/assets/Inefable_Lata_FHD_VUE.png');

@@ -13,7 +13,9 @@
             </router-link>
         <div class="carousel-caption d-block animate__animated animate__backInRight">
             <h5>Ilustronco Website</h5>
-            <p>Bienvenidos a mi pagina, pide tus propios dibujos aqui.</p>
+            <div class="cajaText">
+                <!-- <p>Bienvenidos a mi página, soy un dibujante tirao al peo que hace caricaturas divertidas e ilustraciones mediocres con estilos variados, entre dibujos de caricatura de los 90 y monitos de videojuegos. Además encontrarás merchandising basado en mis dibujos que encontrarás al hacer click en "Merch" o encima de este simpático tronquito</p> -->
+            </div>
         </div>
         </div>
         </div>
@@ -23,8 +25,10 @@
                 <img src="../assets/lupuloon.png" class="img2 d-block animate__animated animate__backInRight" alt="...">
             </router-link>
         <div class="carousel-caption d-block animate__animated animate__backInRight">
-            <h5>Visita mi galeria</h5>
-            <p>ijabdfiufadsb</p>
+            <h5>Visita mi galeria!</h5>
+            <div class="cajaText">
+                <!-- <p>Podrás encontrar la mayoria de mis dibujos en mi plataforma de instagram @el_ilustronco, siéntete libre de visitar la galería de mis dibujos en la pestaña "galería" o has click en este simpático lúpulo</p> -->
+            </div>
         </div>
         </div>
         </div>
@@ -34,8 +38,10 @@
                 <img src="../assets//ab_2023_BN.png" class="img3 d-block animate__animated animate__backInRight" alt="...">
             </router-link>
         <div class="carousel-caption d-block animate__animated animate__backInRight">
-            <h5>Pide tu propia comisión en nuestra plataforma</h5>
-            <p>Bienvenidos a mi pagina, pide tus propios dibujos aqui.</p>
+            <h5>Pide tu propia dibujo en nuestra plataforma!</h5>
+            <div class="cajaText">
+                <!-- <p>Hago varios tipos de dibujo, Caricaturas personalizadas, monitos animados, modelos 3D (CAD), ilustraciones, logos, lo que tu pidas! si quieres ya pedir el tuyo loggeate y entra a la plataforma de comisiones! Ya tienes cuenta? haz click en comisiones o encima de este simpático sujeto!</p> -->
+            </div>
         </div>
         </div>
         </div>
@@ -59,6 +65,9 @@
 .carosuel{
     margin-bottom: 80px;
 }
+/* .cajaText{
+    display: flex;
+} */
 .bloqueFondo{
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -102,6 +111,11 @@
 .carousel-caption{
     text-align: end;
     margin-bottom: 200px;
+}
+.carousel-caption p{
+    text-align: end;
+    width: 40vw;
+    
 }
 @media (max-width:768px){
 .img1{

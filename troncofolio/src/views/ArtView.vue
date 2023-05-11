@@ -1,4 +1,5 @@
 <template>
+    <div class="titulo"><a style="color: inherit;" href="https://www.instagram.com/el_ilustronco/"><i class="fa-brands fa-instagram fa-2xl" style="margin-right: 10px;"></i></a><h3 style="padding-top: 5px;">@el_ilustronco</h3></div>
     <div class="d-flex justify-content-center m-5" v-if="!imagenes">
         <div class="spinner-grow text-info" role="status">
             <span class="visually-hidden">Loading...</span>
@@ -28,6 +29,14 @@ export default {
 </script>
 
 <style scoped>
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    margin: auto;
+    margin-top: 15px;
+}
 .artContainer {
     display: grid;
     gap: 1rem;
@@ -40,6 +49,7 @@ export default {
 }
 
 .cardContainer {
+    background-color: whitesmoke;
     height: 75vh;
     width: auto;
     box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);

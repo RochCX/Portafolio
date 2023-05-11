@@ -37,7 +37,7 @@ export default createStore({
       const options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': '444111f526mshf91c543c463db06p13abf9jsn950066debc47',
+          // 'X-RapidAPI-Key': 'f7064d60acmshee8183e4f73c262p1e6ffdjsn67ec8b1c3005',
           'X-RapidAPI-Host': 'instagram-profile1.p.rapidapi.com'
         }
       };
