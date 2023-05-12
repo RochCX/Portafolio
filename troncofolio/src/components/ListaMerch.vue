@@ -1,6 +1,7 @@
 <template>
     <div class="row row-cols-md-2 g-4 mt-1">
-        <div class="col-lg-3" v-for="merch in listaP" :key="merch.id"> <!--colocar un v-for para recorrer lista de productos-->
+        <!-- generacion de lista de merch-->
+        <div class="col-lg-3" v-for="merch in listaP" :key="merch.id">
             <div class="card">
             <img :src="merch.imagen" class="imgCard" data-bs-toggle="modal" :data-bs-target="'#'+merch.id" alt="...">
             <!-- modal de imagen -->

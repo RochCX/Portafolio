@@ -11,11 +11,9 @@
             <router-link to="/merch">
                 <img src="../assets/ilustronco_sfondo.png"  class="img1 d-block animate__animated animate__backInRight" alt="...">
             </router-link>
-        <div class="carousel-caption d-block animate__animated animate__backInRight">
+        <div class="carousel-caption animate__animated animate__backInRight">
             <h5>Ilustronco Website</h5>
-            <div class="cajaText">
-                <!-- <p>Bienvenidos a mi página, soy un dibujante tirao al peo que hace caricaturas divertidas e ilustraciones mediocres con estilos variados, entre dibujos de caricatura de los 90 y monitos de videojuegos. Además encontrarás merchandising basado en mis dibujos que encontrarás al hacer click en "Merch" o encima de este simpático tronquito</p> -->
-            </div>
+            <p>Bienvenidos a mi página, soy un dibujante tirao al peo que hace caricaturas divertidas e ilustraciones mediocres con estilos variados, entre dibujos de caricatura de los 90 y monitos de videojuegos. Además encontrarás merchandising basado en mis dibujos que encontrarás al hacer click en "Merch" o encima de este simpático tronquito</p>
         </div>
         </div>
         </div>
@@ -26,9 +24,7 @@
             </router-link>
         <div class="carousel-caption d-block animate__animated animate__backInRight">
             <h5>Visita mi galeria!</h5>
-            <div class="cajaText">
-                <!-- <p>Podrás encontrar la mayoria de mis dibujos en mi plataforma de instagram @el_ilustronco, siéntete libre de visitar la galería de mis dibujos en la pestaña "galería" o has click en este simpático lúpulo</p> -->
-            </div>
+            <p>Podrás encontrar la mayoria de mis dibujos en mi plataforma de instagram @el_ilustronco, siéntete libre de visitar la galería de mis dibujos en la pestaña "galería" o has click en este simpático lúpulo</p>
         </div>
         </div>
         </div>
@@ -39,9 +35,7 @@
             </router-link>
         <div class="carousel-caption d-block animate__animated animate__backInRight">
             <h5>Pide tu propia dibujo en nuestra plataforma!</h5>
-            <div class="cajaText">
-                <!-- <p>Hago varios tipos de dibujo, Caricaturas personalizadas, monitos animados, modelos 3D (CAD), ilustraciones, logos, lo que tu pidas! si quieres ya pedir el tuyo loggeate y entra a la plataforma de comisiones! Ya tienes cuenta? haz click en comisiones o encima de este simpático sujeto!</p> -->
-            </div>
+            <p>Hago varios tipos de dibujo, Caricaturas personalizadas, monitos animados, modelos 3D (CAD), ilustraciones, logos, lo que tu pidas! si quieres ya pedir el tuyo loggeate y entra a la plataforma de comisiones! Ya tienes cuenta? haz click en comisiones o encima de este simpático sujeto!</p>
         </div>
         </div>
         </div>
@@ -62,7 +56,7 @@
 </script>
 
 <style scoped>
-.carosuel{
+.carousel{
     margin-bottom: 80px;
 }
 /* .cajaText{
@@ -109,13 +103,14 @@
     transition: 0.5s;
 }
 .carousel-caption{
+    justify-content: flex-end;
+    position: absolute;
     text-align: end;
+    top: 2vh;
+    right: 0;
+    left: 40vw;
     margin-bottom: 200px;
-}
-.carousel-caption p{
-    text-align: end;
     width: 40vw;
-    
 }
 @media (max-width:768px){
 .img1{
@@ -150,8 +145,22 @@
     height: 75vh;
 }
 .carousel-caption{
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    margin-bottom: 0%;
+    align-items: center;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    margin-bottom: 0px;
+    margin-left: -10vw;
+}
+.carousel-caption p{
+    text-align: center;
+    position: absolute;
+    right: auto;
+    bottom: 0;
+    width: 80vw;
 }
 
 }
