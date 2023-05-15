@@ -100,6 +100,21 @@ export default{
         )
         .then(function(){
             estado.conexion = true;
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+                icon: 'success',
+                title: 'Inicio de sesión existoso'
+            })
             router.push('/')
             }).catch((err) => {
             console.log(err);

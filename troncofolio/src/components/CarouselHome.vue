@@ -53,7 +53,7 @@
 
 <style scoped>
 .carousel{
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 /* .cajaText{
     display: flex;
@@ -113,6 +113,7 @@
     z-index: 1;
     position: relative;
     max-width: 58vw;
+    max-height: 48vh;
     min-width: 250px;
     left: -6vw;
     top: -2vh;

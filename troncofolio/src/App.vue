@@ -52,6 +52,7 @@ body{
   background-image: url('@/assets/Inefable_Lata_FHD_VUE.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
