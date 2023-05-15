@@ -1,17 +1,12 @@
 <template>
     <div id="carouselExampleCaptions" class="carousel slide" style="height: 80vh;">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
     <div class="carousel-inner" style="overflow: visible;">
         <div class="carousel-item active" >
         <div class="bloqueFondo" >
             <router-link to="/merch">
                 <img src="../assets/ilustronco_sfondo.png"  class="img1 d-block animate__animated animate__backInRight" alt="...">
             </router-link>
-        <div class="carousel-caption animate__animated animate__backInRight">
+        <div class="carousel-caption custom_cap">
             <h5>Ilustronco Website</h5>
             <p>Bienvenidos a mi página, soy un dibujante tirao al peo que hace caricaturas divertidas e ilustraciones mediocres con estilos variados, entre dibujos de caricatura de los 90 y monitos de videojuegos. Además encontrarás merchandising basado en mis dibujos que encontrarás al hacer click en "Merch" o encima de este simpático tronquito</p>
         </div>
@@ -20,11 +15,11 @@
         <div class="carousel-item">
         <div class="bloqueFondo" >
             <router-link to="/gallery">
-                <img src="../assets/lupuloon.png" class="img2 d-block animate__animated animate__backInRight" alt="...">
+                <img src="../assets/rayo_poemas_2.png" class="img2 d-block animate__animated animate__backInRight" alt="...">
             </router-link>
-        <div class="carousel-caption d-block animate__animated animate__backInRight">
+        <div class="carousel-caption custom_cap d-block">
             <h5>Visita mi galeria!</h5>
-            <p>Podrás encontrar la mayoria de mis dibujos en mi plataforma de instagram @el_ilustronco, siéntete libre de visitar la galería de mis dibujos en la pestaña "galería" o has click en este simpático lúpulo</p>
+            <p>Podrás encontrar la mayoria de mis dibujos en mi plataforma de instagram @el_ilustronco, siéntete libre de visitar la galería de mis dibujos en la pestaña "galería" o has click en esta portada de libro</p>
         </div>
         </div>
         </div>
@@ -33,7 +28,7 @@
             <router-link to="/comm">
                 <img src="../assets//ab_2023_BN.png" class="img3 d-block animate__animated animate__backInRight" alt="...">
             </router-link>
-        <div class="carousel-caption d-block animate__animated animate__backInRight">
+        <div class="carousel-caption custom_cap d-block">
             <h5>Pide tu propia dibujo en nuestra plataforma!</h5>
             <p>Hago varios tipos de dibujo, Caricaturas personalizadas, monitos animados, modelos 3D (CAD), ilustraciones, logos, lo que tu pidas! si quieres ya pedir el tuyo loggeate y entra a la plataforma de comisiones! Ya tienes cuenta? haz click en comisiones o encima de este simpático sujeto!</p>
         </div>
@@ -52,6 +47,7 @@
 </template>
 
 <script>
+
 
 </script>
 
@@ -85,24 +81,24 @@
 }
 .img2{
     z-index: 1;
-    position: relative;
-    max-width: 60vw;
+    position: absolute;
+    max-width: 55vw;
     min-width: 150px;
-    left: -8vw;
-    top: -2vh;
+    left: -1vw;
+    top: -1vh;
     transition: 0.5s;
 }
 .img3{
     z-index: 1;
     position: relative;
-    max-height: 520px;
+    max-height: 80vh;
     max-width: 40vw;
     min-width: 150px;
     left: -4vw;
     top: -10vh;
     transition: 0.5s;
 }
-.carousel-caption{
+.custom_cap{
     justify-content: flex-end;
     position: absolute;
     text-align: end;
@@ -112,7 +108,7 @@
     margin-bottom: 200px;
     width: 40vw;
 }
-@media (max-width:768px){
+@media (max-width:900px){
 .img1{
     z-index: 1;
     position: relative;
@@ -126,25 +122,33 @@
 .img2{
     z-index: 1;
     position: relative;
-    max-width: 95vw;
+    max-width: 45vw;
     min-width: 250px;
-    left: -4vw;
-    top: 0;
+    left: auto;
+    top: -2vh;
     transition: 1s;
     margin: auto;
 }
 .img3{
     z-index: 1;
     position: relative;
-    max-width: 50vw;
+    max-height: 60vh;
     top: -6vh;
     transition: 1s;
     margin: auto;
 }
+.custom_cap {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  text-align: center;
+}
 .bloqueFondo{
     height: 75vh;
 }
-.carousel-caption{
+.custom_cap {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -152,34 +156,43 @@
     top: auto;
     right: auto;
     bottom: 0;
+    justify-content: center;
     margin-bottom: 0px;
-    margin-left: -10vw;
+    margin-left: auto;
 }
-.carousel-caption p{
+
+.carousel-caption h5 {
+    z-index: 1;
+}
+
+.carousel-caption p {
     text-align: center;
-    position: absolute;
-    right: auto;
-    bottom: 0;
+    margin: auto;
     width: 80vw;
 }
 
 }
 @media (max-width: 550px){
-    .img1{
+.img1{
     max-width: 100%;
     left: 0vw;
     top: 6vh;
     transition: 0.5s;
 }
 .img2{
-    top: 8vh;
-    max-width: 500px;
-    left: -15vw;
+    max-width: 80vw;
 }
 .img3{
     max-width: 80vw;
-    top: -1vh;
+    top: -3vh;
     left: 2vw;
+}
+.bloqueFondo{
+    height: 95vh;
+}
+.carousel{
+    height: auto;
+    margin-bottom: 180px;
 }
 }
 </style>
