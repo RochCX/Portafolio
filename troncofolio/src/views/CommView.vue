@@ -1,5 +1,5 @@
 <template>
-    <!-- aqui debe ir un formulario para ingresar una comision de dibujo -->
+    <!-- formulario para ingresar un pedido de dibujo -->
     <form class="commform row g-3">
         <h2>Plataforma de Comisiones</h2>
         <div class="row mb-3">
@@ -39,6 +39,7 @@
                 </div>
             </div>
         </fieldset>
+        <!-- Si el valor checkbox "Tradicional" esta marcado el siguiente div estara visible -->
         <div class="row mb-4" v-if="checkeo">
             <div class="col-md-6">
                 <label for="direccionD" class="form-label">Direccion de despacho</label>
@@ -46,6 +47,7 @@
             </div>
             <div class="col-md-3">
                 <label for="regionS" class="form-label">Region</label>
+                <!-- se arma un select de la lista obtenida por RegionService -->
                 <select class="form-select" id="regionS" v-model=inputRegion required>
                     <option v-for="regionA in ListaR" :key="regionA.region">{{ regionA.region }}</option>
                 </select>
@@ -55,6 +57,7 @@
                 <input v-model="inputPostal" type="text" class="form-control" id="cPostal" required>
             </div>
         </div>
+        <!-- aqui el usuario debe escribir los detalles de su dibujo -->
         <div class="form-floating">
             <textarea v-model="inputComentarios" class="form-control" placeholder="Instrucciones de dibujo" id="floatingTextarea" required></textarea>
             <label style="font-size:small;" for="floatingTextarea">Escriba lo que necesite</label>
@@ -64,9 +67,11 @@
                 <div class="row">
                     <div class="col-md-6"><h5>Inserte link de referencia</h5></div>
                     <div class="col-md-2">
+                        <!-- boton agrega un input a la lista URLs -->
                         <button class="btn btn-primary mb-1 btnform" @click.prevent="addUrl">Agregar URL</button>
                     </div>
                 </div>
+                <!-- Se obtiene una lista modificable de input para agregar URLs de imagenes -->
                 <div class="row mb-1" v-for="(url, index) in urls" :key="index">
                     <div class="col-md-8">
                         <input class="form-control" type="url" v-model="url.value" :required="url.required"/>
@@ -107,6 +112,7 @@ export default {
         ...mapState(['correo']),
     },
     methods: {
+        // cadena de validadores para validar los datos del pedido del dibujo
         envioForm(){
             if (!this.inputNombre) {
                 Swal.fire({
@@ -186,13 +192,16 @@ export default {
             })
             router.push('/')
         },
+        // funcion que agrega el input url
         addUrl() {
             this.urls.push({ value: "", required: true});
         },
+        // remueve el input url segun el boton que este al lado
         removeUrl(index) {
             this.urls.splice(index, 1);
         }
     },
+    // obtencion de lista de regiones para el select
     created: async function() {
         try {
             let response = await RegionService.getRegiones();

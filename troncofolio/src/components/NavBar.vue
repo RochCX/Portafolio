@@ -28,6 +28,7 @@
                 <a class="navBtn" data-bs-toggle="modal" data-bs-target="#loggoutModal"> Cerrar Sesion</a>
             </li>
         </ul>
+        <!-- espacio para mostrar el correo de la persona loggeada -->
         <div class="correoMuestra">
                 <a id="showCorreo" class="ms-lg-auto">{{ correo }} </a>
             </div>
@@ -71,6 +72,13 @@ export default{
 </script>
 
 <style scoped>
+.navbar-toggler{
+    border-color: rgb(119, 149, 220);
+}
+.navbar-toggler-icon{
+    background-image: url('@/assets/tronco_vect-removebg-preview.png');
+    background-size: cover;
+}
 .navbar{
     background-color: rgba(0, 0, 0, 0.911);
 }
@@ -102,7 +110,5 @@ export default{
 }
 #showCorreo{
     text-decoration: none;
-    
-    
 }
 </style>

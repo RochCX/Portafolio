@@ -16,6 +16,7 @@ export default createStore({
   mutations: {
     crearGaleria(state, payload) {
       state.imagenes = payload
+      // se almacena lista de feed(comentarios, likes, url de imagenes, etc.) en estado imagenes
     },
     desconectar(state) {
       if (state.conexion == true) {
@@ -32,6 +33,7 @@ export default createStore({
     },
   },
   actions: {
+    // al arrancar la pagina por primera vez, se realiza un fetch del feed de las 12 primeras instancias del instagram "@el_ilustronco"
     async feedInsta({ commit }) {
       const url = 'https://instagram-profile1.p.rapidapi.com/getfeed/el_ilustronco';
       const options = {
@@ -45,6 +47,7 @@ export default createStore({
         const response = await fetch(url, options);
         const resultado = await response.json();
         commit('crearGaleria', resultado.media)
+        // se emitio el resultado en forma de lista con objetos de media
       } catch (error) {
         console.error(error);
         Swal.fire({

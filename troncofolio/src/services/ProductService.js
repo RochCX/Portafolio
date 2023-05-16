@@ -64,19 +64,21 @@ export class ProductService{
         {
             "id": "img11",
             "nombre":"Polera 705",
-            "descripcion":"",
+            "descripcion":"Polera de algodon egipcio con estampado de 705",
             "imagen": require("../assets/merch/img11.jpg"),
         },
         {
             "id": "img12",
             "nombre":"Patito de hule",
-            "descripcion":"",
+            "descripcion":"Patito de hule",
             "imagen": require("../assets/merch/img12.jpg"),
         },
     ]
+    // obtencion de lista completa de merchandising
 static getAllMerch() {
     return this.merchs;
     }
+    // obtencion de objeto por id, si no existe retorna null
 static getMerchById(id) {
         return this.merchs.find(merch => merch.id === id) || null;
     }

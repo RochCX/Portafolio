@@ -3,7 +3,8 @@
         <form name="contact-frm" action="" method="post" id="contact-frm">
             <fieldset class="field_contact">
                 <div id="contenedor">
-                <h1 style="font-weight: 800;">Iniciar Sesión</h1>                    
+                <h1 style="font-weight: 800;">Iniciar Sesión</h1>
+                    <!-- formulario para iniciar sesion -->
                     <input v-model.trim="formulario.correo" placeholder="Correo" type="email" name="correo_txt" id="email" class="cambio" required>
                     <input v-model.trim="formulario.password" placeholder="Contraseña" type="password" name="asunto_txt" id="pass" class="cambio" required>
                     <div class="seccionboton">
@@ -12,11 +13,11 @@
                 </div>
             </fieldset>
         </form>
-        <!-- Boton abre modal login -->
         <div class="caja__signup">
             <div class="contCaja">
                 <h1 class="titulo_signup">Hola! unete al clan tronco</h1>
                 <p>Has tu propia cuenta clickeando aqui abajo, es gratis!</p>
+                <!-- Boton abre modal login -->
                 <button class="SignUp" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Únete</button>
             </div>
         </div>
@@ -73,15 +74,17 @@ export default{
             const auth = getAuth();
             createUserWithEmailAndPassword(auth, this.nuevoTronco.correoN, this.nuevoTronco.passwordN)
                 .then((userCredential) => {
-                console.log("Nuevo usuario registrado: " + userCredential.user.uid);
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Registro exitoso',
-                    text: 'El usuario ha sido registrado exitosamente. Bienvenido a TroncoWeb!',
-                });
-                router.push('/');
+                    // Si el correo y contraseña esta correcto con los validadores integrados de Firebase
+                    console.log("Nuevo usuario registrado: " + userCredential.user.uid);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Registro exitoso',
+                        text: 'El usuario ha sido registrado exitosamente. Bienvenido a TroncoWeb!',
+                    });
+                    router.push('/');
                 })
                 .catch((error) => {
+                // Si el correo y/o contraseña estan incorrectos
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 Swal.fire({

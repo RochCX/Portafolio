@@ -1,10 +1,12 @@
 <template>
     <div class="titulo"><a style="color: inherit;" href="https://www.instagram.com/el_ilustronco/"><i class="fa-brands fa-instagram fa-2xl" style="margin-right: 10px;"></i></a><h3 style="padding-top: 5px;">@el_ilustronco</h3></div>
+    <!-- se muestra un circulo de carga cuando el estado "imagenes" no se ha cargado del todo-->
     <div class="d-flex justify-content-center m-5" v-if="!imagenes">
         <div class="spinner-grow text-info" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
+    <!-- funcion que genera una lista de imagenes obtenidas a traves instagram con sus respectivos textos del post -->
     <div class="artContainer">
         <div class="ciclo" v-for="imagen in imagenes" :key="imagen.id">
             <div class="cardContainer"><img :src="imagen.display_url" alt="" class="galleryImg" crossorigin="anonymous">

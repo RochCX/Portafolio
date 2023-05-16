@@ -55,9 +55,6 @@
 .carousel{
     margin-bottom: 20px;
 }
-/* .cajaText{
-    display: flex;
-} */
 .bloqueFondo{
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -84,6 +81,7 @@
     position: absolute;
     max-width: 55vw;
     min-width: 150px;
+    border-radius: 15px;
     left: -1vw;
     top: -1vh;
     transition: 0.5s;
@@ -176,16 +174,19 @@
 @media (max-width: 550px){
 .img1{
     max-width: 100%;
+    max-height: 40vh;
     left: 0vw;
-    top: 6vh;
+    top: -2vh;
     transition: 0.5s;
 }
 .img2{
     max-width: 80vw;
+    max-height: 50vh;
 }
 .img3{
     max-width: 80vw;
-    top: -3vh;
+    max-height: 55vh;
+    top: -11vh;
     left: 2vw;
 }
 .bloqueFondo{
@@ -194,6 +195,7 @@
 .carousel{
     height: auto;
     margin-bottom: 180px;
+    font-size: small;
 }
 }
 </style>

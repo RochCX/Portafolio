@@ -46,6 +46,7 @@ const routes = [
     name: 'gallery',
     component: ArtView,
   },
+  // redireccion automatica a 404 cuando se ingresa una ruta no existe en primera rama
   { 
     path: '/:pathMatch(.*)*',
     name: 'not-found', 
@@ -67,16 +68,16 @@ router.beforeEach((to,from,next) =>{
       state.conexion = true;
       localStorage.setItem('localConectado',state.conexion);
       state.correo = user.email;
-      // puedo colocar el correo del usuario :O
+      // se almacena el correo en store, y se mantiene el valor de conexion del usuario
       return
     } else{
       state.conexion = false;
       localStorage.setItem('localConectado',state.conexion);
-      // si lo coloco debo removerlo en esta parte
+      // cambio estado de conexion del usuario
       return
     }
   })
-  // Si intento entrar a la vista Login estado ya conectado
+  // Si intento entrar a la vista Login estado ya estando conectado
   if(estadoC && to.path == '/login'){
     Swal.fire({
       title: 'Qué haces?',
@@ -87,7 +88,7 @@ router.beforeEach((to,from,next) =>{
     return
   }
   if(!estadoC){
-    // falta una vista de comisiones, ahi no estaria permitido ir sin tener conexion
+    // si no estoy conectado e intento entrar a comisiones, usuario sera redireccionado a home
     if(to.path != '/comm'){
       next();
       return
