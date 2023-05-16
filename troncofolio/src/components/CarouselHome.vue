@@ -122,6 +122,7 @@
     z-index: 1;
     position: relative;
     max-width: 45vw;
+    max-height: 50vh;
     min-width: 250px;
     left: auto;
     top: -2vh;
@@ -168,6 +169,9 @@
     text-align: center;
     margin: auto;
     width: 80vw;
+}
+.carousel{
+    font-size: small;
 }
 
 }
