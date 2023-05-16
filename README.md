@@ -135,8 +135,74 @@ export default{
 }
 </script>
 ```
-- __Definición de rutas__, VER LO DE LOS HIJOS DE LAS RUTAS NATES DE COLOCAR ESTE SOPERUTANO
+- __Definición de rutas__
+  - _Rutas URI_: Las rutas URI definidas en el proyecto (Véase en [index.js Router](/troncofolio/src/router/index.js) se han ordenado según al contenido que aguardan y al orden lógico de navegación de la página:
+```js
+  const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
+  },
+  {
+    path: '/merch',
+    name: 'merch',
+    component:MerchView,
+  },
+  {
+    path: '/producto',
+    redirect: '/merch',
+    children: [
+      {
+        path: '/producto/:id',
+        name: 'detalle-merch',
+        component: DetalleProducto,
+      }],
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component:LoginView,
+  },
+  {
+    path: '/comm',
+    name: 'comm',
+    component: CommView,
+  },
+  {
+    path: '/gallery',
+    name: 'gallery',
+    component: ArtView,
+  },
+  // redireccion automatica a 404 cuando se ingresa una ruta no existe en primera rama
+  { 
+    path: '/:pathMatch(.*)*',
+    name: 'not-found', 
+    component: NotFound
+  },]
 ```
+  - Parámetros por URL, los cuales se encuentran en el ejemplo anterior
+  
+```
+{
+    path: '/producto',
+    redirect: '/merch',
+    children: [
+      {
+        path: '/producto/:id',
+        name: 'detalle-merch',
+        component: DetalleProducto,
+      }],
+  },
+```
+  - Rutas por defecto el cual encontrarás en el primer path de la lista routes:
+```js
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
+  },
 ```
 ### Programacion con Javascript
 Usos básicos y de resolución de problemas a través de ES6/7 lo pueden encontrar en códigos tales como a partir de la línea 14 en [DetalleProducto.vue](/troncofolio/src/components/DetalleProducto.vue)
