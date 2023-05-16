@@ -48,7 +48,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 img{
   max-height: 75vh;
   object-fit: contain;
@@ -79,6 +79,15 @@ h2{
 .textos{
   display:flex;
   flex-direction: column;
+}
+@media (max-width:940px){
+.cuadroTodo{
+  display: grid;
+  grid-template-columns: auto;
+}
+img{
+  max-width: 80vw;
+}
 }
 </style>
 

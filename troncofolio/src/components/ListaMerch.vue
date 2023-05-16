@@ -14,7 +14,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <router-link :to="'/merch/' + merch.id"><img :src="merch.imagen" class="image-responsive" alt="" data-bs-dismiss="modal"></router-link>
+                        <router-link :to="'/producto/' + merch.id"><img :src="merch.imagen" class="image-responsive" alt="" data-bs-dismiss="modal"></router-link>
                     </div>
                     </div>
                 </div>

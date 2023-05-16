@@ -27,9 +27,14 @@ const routes = [
     component:MerchView,
   },
   {
-    path: '/merch/:id',
-    name: 'detalle-merch',
-    component: DetalleProducto
+    path: '/producto',
+    redirect: '/merch',
+    children: [
+      {
+        path: '/producto/:id',
+        name: 'detalle-merch',
+        component: DetalleProducto,
+      }],
   },
   {
     path: '/login',

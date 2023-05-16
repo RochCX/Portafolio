@@ -2,7 +2,7 @@
         <nav class="navbar navbar-expand-lg" style="z-index: 100;">
     <div class="container-fluid">
         <a class="navbar-brand" style="color: white;" href="/">
-            <img src="../assets/pera_cara.png" style="height: 10vh;margin-right: 15px;" alt="">
+            <img src="../assets/pera_cara.png" style="height: 10vh;margin-right: 15px;border-radius: 15px;" alt="">
             Troncoweb</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
