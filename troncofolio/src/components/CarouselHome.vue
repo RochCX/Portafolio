@@ -75,6 +75,7 @@
     position: absolute;
     max-width: 55vw;
     min-width: 150px;
+    max-height: 75vh;
     border-radius: 15px;
     left: -1vw;
     top: -1vh;
