@@ -13,10 +13,6 @@
 </div>
 </template>
 
-<script>
-
-</script>
-
 <style scoped>
 footer {
     width: 100%;

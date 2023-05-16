@@ -45,12 +45,6 @@
     </button>
     </div>
 </template>
-
-<script>
-
-
-</script>
-
 <style scoped>
 .carousel{
     margin-bottom: 20px;
