@@ -127,7 +127,7 @@
     z-index: 1;
     position: relative;
     max-height: 60vh;
-    top: -6vh;
+    top: -9vh;
     transition: 1s;
     margin: auto;
 }

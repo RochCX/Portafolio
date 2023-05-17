@@ -37,7 +37,7 @@ export default {
       try {
         this.merch = await ProductService.getMerchById(id);
         if(this.merch === null) {
-            router.push({name: "not-found"})
+            router.push({name: "merch"})
         }
       } catch (error) {
         console.log(error);
