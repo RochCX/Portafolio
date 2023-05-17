@@ -4,7 +4,6 @@
         <div class="col-lg-3" v-for="merch in listaP" :key="merch.id">
             <router-link :to="'/merch/' + merch.id"><div class="card">
             <img :src="merch.imagen" class="imgCard">
-            <!-- modal de imagen -->
             </div></router-link>
         </div>
     </div>
