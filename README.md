@@ -150,14 +150,9 @@ export default{
     component:MerchView,
   },
   {
-    path: '/producto',
-    redirect: '/merch',
-    children: [
-      {
-        path: '/producto/:id',
-        name: 'detalle-merch',
-        component: DetalleProducto,
-      }],
+    path: '/merch/:id',
+    name: 'detalle-merch',
+    component: DetalleProducto
   },
   {
     path: '/login',
@@ -199,9 +194,14 @@ export default{
 ```js
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: '/merch',
+    name: 'merch',
+    component:MerchView,
+  },
+  {
+    path: '/merch/:id',
+    name: 'detalle-merch',
+    component: DetalleProducto
   },
 ```
 ### Programacion con Javascript
